@@ -1,0 +1,120 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API CR Versión 4.4 Enviar",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "servers": [],
+  "paths": {
+    "/cr_api-staging/xml_invoice": {
+      "post": {
+        "tags": [
+          "Crear xml MR (Aceptación)"
+        ],
+        "summary": "Crear xml MR (Aceptación)",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cr_api-staging/certified_upload": {
+      "post": {
+        "tags": [
+          "Subir certificado"
+        ],
+        "summary": "Subir certificado",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cr_api-staging/certified_get": {
+      "get": {
+        "tags": [
+          "Obtener certificado"
+        ],
+        "summary": "Obtener certificado",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cr_api-staging/generate_key": {
+      "post": {
+        "tags": [
+          "Generar clave"
+        ],
+        "summary": "Generar clave",
+        "description": "## Generate Key API\n\nThis endpoint is used to generate a key based on the provided parameters. It is primarily utilized for creating secure access keys that may be required for subsequent operations in the application.\n\n### Request\n\n**Method:** POST  \n**URL:** `http://localhost:8078/cr_api-staging/generate_key`\n\n#### Request Body\n\nThe request body must be sent as `form-data` and should include the following parameters:\n\n| Parameter | Type | Description |\n| --- | --- | --- |\n| `secret_key` | text | The secret key used for key generation. |\n| `sucursal` | text | The branch or location identifier. |\n| `terminal` | text | The terminal identifier. |\n| `secuencia` | text | A sequence number for processing. |\n| `tipo_documento` | text | The type of document associated. |\n| `numero_identificacion` | text | The identification number. |\n| `situacion` | text | The current situation or status. |\n| `codigo_pais` | text | The country code relevant to the request. |\n\n### Response\n\nUpon a successful request, the API will return a JSON response with the following structure:\n\n- **status_code**: An integer indicating the status of the request (0 for success).\n    \n- **response**: An object containing:\n    \n    - `consecutivo`: A consecutive identifier related to the key generation.\n        \n    - `clave`: The generated key.\n        \n\n**Example Response:**\n\n``` json\n{\n  \"status_code\": 0,\n  \"response\": {\n    \"consecutivo\": \"\",\n    \"clave\": \"\"\n  }\n}\n\n ```\n\n### Notes\n\n- Ensure that all required fields are provided in the request body to avoid errors.\n    \n- The response will indicate the success or failure of the key generation process through the `status_code`.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cr_api-staging/xml_sign": {
+      "post": {
+        "tags": [
+          "Firmar xml"
+        ],
+        "summary": "Firmar xml",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cr_api-staging/send_hacienda": {
+      "post": {
+        "tags": [
+          "Hacienda envío"
+        ],
+        "summary": "Hacienda envío",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cr_api-staging/consult_hacienda": {
+      "get": {
+        "tags": [
+          "Hacienda consulta"
+        ],
+        "summary": "Hacienda consulta",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  }
+}
